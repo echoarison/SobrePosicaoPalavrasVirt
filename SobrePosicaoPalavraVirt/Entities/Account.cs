@@ -28,10 +28,18 @@ namespace SobrePosicaoPalavraVirt.Entities
         }
 
         //Methods
-        public void WithDraw(double amount)
+        /**
+         * 
+         * Aqui vou usar a palavra "virtual" para
+         * avisar o CSharp que vou querer alterar
+         * o method WithDraw() nas subClasses. Então
+         * vou utilizar a palavra "virtual"
+         * 
+         **/
+        public virtual void WithDraw(double amount)
         {
-
-            Balance -= amount;
+            //add uma taxa pelo saque na conta commum
+            Balance -= amount + 5.0;
 
         }
         public void Deposit(double amount)

@@ -28,5 +28,25 @@ namespace SobrePosicaoPalavraVirt.Entities
 
         }
 
+        /**
+         * 
+         * Aqui vou rescrever o method "WithDraw()" para que 
+         * a taxa de 5.00 não seja aplicado na SavingsAccount
+         * para isso tereri que usar a palavra "override" para 
+         * sobrescrever
+         * 
+         **/
+        /*public override void WithDraw(double amount)
+        {
+            Balance -= amount;
+        }*/
+
+        public override void WithDraw(double amount)
+        {
+            base.WithDraw(amount);  //aqui estou chamando o method diretamente na superClasse(Classe mãe), um tipo de reaproveitamento
+            Balance -= 2.0;
+
+        }
+
     }
 }
